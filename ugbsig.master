@@ -1,0 +1,199 @@
+﻿<%@ Master Language="VB" CodeFile="ugbsig.master.vb" Inherits="ugbsig" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head head runat="server" />
+    <title>:::UGBSig:::</title>
+     <link rel="stylesheet" href="Styles/Style.css" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+<style type="text/css">
+    
+a:link {  color: #333333; text-decoration: none}
+a:link {  color: #F52F00; text-decoration: none;
+        background-color: #99CCFF;
+    }
+
+.Estilofooter 
+{
+	font-size: 10px;
+	font-family:arial;
+}
+
+        .style1
+        {
+            color: #000099;
+            font-family: Arial;
+            font-size: large;
+        }
+        .style5
+        {
+            width: 100%;
+            border: 1px;
+            border-color: #99CCFF;
+        }
+        .style6
+        {
+            width: 101%;
+            height: 101px;
+        text-align: center;
+    }
+        .style7
+        {
+        width: 947px;
+        text-align: center;
+        background-color: #6699FF;
+    }
+
+        .style19
+        {
+            width: 293px;
+            font-weight: bold;
+            text-align: center;
+        background-color: #99CCFF;
+    }
+        .style20
+        {
+            width: 947px;
+            text-align: left;
+            font-weight: bold;
+        background-color: #99CCFF;
+    }
+        .style21
+        {
+        width: 15%;
+        background-color: #99CCFF;
+    }
+        .style22
+        {
+            width: 150px;
+            font-weight: bold;
+        background-color: #99CCFF;
+        text-align: center;
+        color: #0000CC;
+    }
+
+        .fondoprincipal
+    {
+        background-color: #FFFFFF;
+        text-align: left;
+    }
+
+        .style24
+    {
+        color: #000099;
+    }
+    
+        .style25
+    {
+        width: 15%;
+        background-color: #6699FF;
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+        </style>
+</head>
+
+<body style="margin: 0">
+<form id="form1" runat="server" >
+
+    <table align="center" class="style5" border="0">
+        <tr>
+            <td class="style25">
+                <img alt="logougb" class="style6" 
+                    longdesc="Imagenes/logo_oficial.png" 
+                    src="Imagenes/logo_oficial.png" /></td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style25">
+                &nbsp;</td>
+        </tr>
+
+                <tr>
+            <td class="style22">
+                MENU PRINCIPAL</td>
+            <td class="style20">
+                <asp:Label ID="lblnomusuario" runat="server" Text="No se ha iniciado sesión"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+                    class="style24"> </span>
+                    </td>
+            <td class="style19">
+                <asp:Button ID="btnsesion" runat="server" BackColor="#99CCFF" 
+                    BorderStyle="None" BorderWidth="0px" Font-Bold="True" Height="21px" 
+                    Text="Iniciar Sesion" Width="140px" />
+                    </td>
+        </tr>
+
+        <tr>
+            <td class="style21" align="left" valign="top" width="15%";>
+                <asp:TreeView ID="TreeView1" runat="server" 
+                    LineImagesFolder="~/TreeLineImages" 
+                    CssClass="style1" Height="341px" 
+                    style="font-family: 'Arial Unicode MS'; font-size: small; font-weight: 700; background-color: #99CCFF; color: #000000;" 
+                    Width="130px" valign="top" ForeColor="#000099" Font-Size="9pt" 
+                    NodeIndent="10" ShowExpandCollapse="False">
+                    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                    <Nodes>
+                        <asp:TreeNode Text="Ir a Principal" Value="Principal" 
+                            NavigateUrl="~/principal.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="Administracion" 
+                            Value="Administracion">
+                            <asp:TreeNode NavigateUrl="~/f_unidad.aspx" Text="Agregar Unidad" 
+                                Value="Agregar Unidad"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/f_puesto.aspx" Text="Agregar Puesto" 
+                                Value="Agregar Puesto"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/f_carrera.aspx" Text="Agregar Carrera" 
+                                Value="Agregar Carrera"></asp:TreeNode>
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Ingresar Información" Value="Mapas">
+                            <asp:TreeNode NavigateUrl="~/f_estudiante.aspx" Text="Estudiante" 
+                                Value="Estudiante"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/f_docente.aspx" Text="Docente" 
+                                Value="Docente"></asp:TreeNode>
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Consultas" Value="Consultas"></asp:TreeNode>
+                        <asp:TreeNode Text="Usuarios" Value="Usuarios">
+                            <asp:TreeNode Text="Nuevo Usuario" Value="Nuevo Usuario" 
+                                NavigateUrl="~/f_usuario.aspx"></asp:TreeNode>
+                            <asp:TreeNode Text="Modificar Usuario" Value="Modificar Usuario"></asp:TreeNode>
+                            <asp:TreeNode Text="Cambiar Contraseña" Value="Cambiar Contraseña">
+                            </asp:TreeNode>
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Ayuda" Value="Ayuda">
+                            <asp:TreeNode Text="Temas de Ayuda" Value="Temas de Ayuda"></asp:TreeNode>
+                            <asp:TreeNode Text="Acerca de Sigugb" Value="Acerca de..." 
+                                NavigateUrl="~/acercadesigugb.aspx" ToolTip="Acerca del Sitio UGBSIG"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/autor.aspx" Text="Acerca del Autor" 
+                                Value="Acerca del Autor"></asp:TreeNode>
+                        </asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="~/derechos.aspx" Text="Derechos de Propiedad" 
+                            Value="Derechos de Propiedad"></asp:TreeNode>
+                    </Nodes>
+                    <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" 
+                        HorizontalPadding="0px" NodeSpacing="0px" VerticalPadding="0px" />
+                    <ParentNodeStyle Font-Bold="False" />
+                    <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" 
+                        HorizontalPadding="0px" VerticalPadding="0px" />
+                </asp:TreeView>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </td>
+            <td colspan="2" valign="top" class="fondoprincipal" width="85%">
+       
+       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+       </asp:ContentPlaceHolder>
+
+            </td>
+        </tr>
+        </table>
+
+ </form>
+</body>
+</html>
